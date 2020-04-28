@@ -13,6 +13,7 @@ import {WeddingHallCriteria} from '../../model/wedding-hall-criteria';
 import {InputDataForm} from '../../model/input-data-form';
 import {WeddingServicesSet} from '../../model/wedding-services-set';
 import {Router} from '@angular/router';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
   selector: 'app-input-form',
@@ -39,9 +40,13 @@ export class InputFormComponent implements OnInit {
   inputDataForm: InputDataForm;
   results: WeddingServicesSet[];
 
-  constructor(private inputFormService: InputFormService, private router: Router) { }
+  constructor(private inputFormService: InputFormService, private router: Router, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 5000);
     this.inputDataForm = new InputDataForm();
     this.beautyServiceCriteria = new BeautyServicesCriteria();
     this.carRentingServicesCriteria = new CarRentingServicesCriteria();
@@ -59,6 +64,10 @@ export class InputFormComponent implements OnInit {
     this.inputFormService.getCities().subscribe(data => { this.groomLivingCities = data; });
   }
   onChangeWeddingVenueProvince(chosenProvince: string): void{
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 5000);
     this.inputFormService.getCities().subscribe(data => { this.weddingVenueCities = this.filterWeddingVenueCities(data, chosenProvince); });
   }
   filterWeddingVenueCities(cities: City[], province: string): City[]{
@@ -66,6 +75,10 @@ export class InputFormComponent implements OnInit {
     return cities;
   }
   onChangeWeddingVenueCity(chosenCity: string): void{
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 5000);
     this.inputFormService.getWeddingVenues().subscribe(data => { this.weddingVenues = this.filterWeddingVenues(data, chosenCity); });
   }
   filterWeddingVenues(weddingVenues: WeddingVenue[], city: string): WeddingVenue[]{
@@ -73,12 +86,24 @@ export class InputFormComponent implements OnInit {
     return weddingVenues;
   }
   onChangeBrideLivingProvince(chosenProvince: string): void{
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 5000);
     this.inputFormService.getCities().subscribe(data => { this.brideLivingCities = this.filterWeddingVenueCities(data, chosenProvince); });
   }
   onChangeGroomLivingProvince(chosenProvince: string): void{
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 5000);
     this.inputFormService.getCities().subscribe(data => { this.groomLivingCities = this.filterWeddingVenueCities(data, chosenProvince); });
   }
   onSave(): void{
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 30000);
     this.inputDataForm.weddingVenueName = this.chosenWeddingVenue.name;
     this.inputDataForm.weddingVenueStreet = this.chosenWeddingVenue.street;
     this.inputDataForm.weddingVenuePossessionNumber = this.chosenWeddingVenue.possessionNumber;

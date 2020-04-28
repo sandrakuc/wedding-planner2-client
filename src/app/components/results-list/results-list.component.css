@@ -1,0 +1,98 @@
+@font-face {
+  font-family: 'Heaven Matters';
+  src: url('../../fonts/Heaven_Matters.ttf');
+}
+
+.inputDataForm {
+  background-color: cornsilk;
+}
+
+.servicePhoto{
+  object-fit: cover;
+}
+
+.customBanner {
+  background-image: url("https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 100%;
+  height: 200px;
+  padding-top: 50px;
+}
+
+.productName{
+  font-family: "Heaven Matters";
+  font-size: 28px;
+}
+
+.slogan{
+  font-family: "Heaven Matters";
+  font-size: 24px;
+}
+
+.logo{
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgb(191,147,28);
+}
+
+.companyDetails{
+  background-color: white;
+  border: 1px solid rgb(191,147,28);
+  border-radius: 4px;
+  height: 210px;
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.image{
+  float: left;
+  margin: 30px 5px;
+  width: 30%;
+}
+
+.description{
+  float: left;
+  margin: 30px 5px;
+  width: 60%;
+  font-family: Helvetica, sans-serif;
+  font-size: 10px;
+}
+
+.description div{
+  margin-bottom: 8px;
+}
+
+.name{
+  font-size: 14px;
+  color: rgb(191,147,28);
+}
+
+.focus{
+  color: rgb(191,147,28);
+}
+
+.paginButton {
+  width: 45%;
+  background-color: gold;
+  font-size: 10px;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buttonSection{
+  width: 100%;
+}
+
+.title{
+  font-size: 36px;
+  text-align: center;
+  color: rgb(191,147,28);
+  font-family: Helvetica, sans-serif;
+  margin: 30px 0px;
+}
+

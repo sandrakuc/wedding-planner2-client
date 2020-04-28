@@ -1,95 +1,144 @@
 <div class="inputDataForm">
-  <div>
-    <img src="{{results[numberOfSet].hall.image}}">
-    <div>{{results[numberOfSet].hall.name}}</div>
-    <div>{{results[numberOfSet].hall.address}}</div>
-    <div>{{results[numberOfSet].hall.avgPrice}}PLN za talerz</div>
-    <div>Ocena: {{results[numberOfSet].hall.rating}}</div>
-    <div>Maksymalna liczba gości: {{results[numberOfSet].hall.maxGuestsQuantity}}</div>
-    <div>{{results[numberOfSet].hall.phoneNumber}}</div>
-    <div>{{results[numberOfSet].hall.website}}</div>
+  <div class="customBanner">
+    <div class="logo" style="text-align: center">
+      <div class="productName">Your personal wedding consultant</div>
+      <div class="slogan">Professional advice at your fingertips</div>
+    </div>
   </div>
-  <div>
-    <img src="{{results[numberOfSet].dressStore.image}}">
-    <div>{{results[numberOfSet].dressStore.name}}</div>
-    <div>{{results[numberOfSet].dressStore.address}}</div>
-    <div>średnia cena: {{results[numberOfSet].dressStore.avgPrice}}</div>
-    <div>Ocena: {{results[numberOfSet].dressStore.rating}}</div>
-    <div>{{results[numberOfSet].dressStore.phoneNumber}}</div>
-    <div>{{results[numberOfSet].dressStore.website}}</div>
+  <div class="title">Proponowany zestaw firm nr {{numberOfSet + 1}}</div>
+  <div class="companyDetails">
+    <div class="image">
+      <img src="{{results[numberOfSet].hall.image}}" width="100" height="150" class="servicePhoto">
+    </div>
+    <div class="description">
+      <div class="name">{{results[numberOfSet].hall.name}}</div>
+      <div>{{results[numberOfSet].hall.address}}</div>
+      <div>Cena: <span class="focus">{{results[numberOfSet].hall.avgPrice}} PLN</span> za wszystkich gości</div>
+      <div>Ocena: <span class="focus">{{results[numberOfSet].hall.rating}}</span></div>
+      <div>Maksymalna liczba gości: <span class="focus">{{results[numberOfSet].hall.maxGuestsQuantity}}</span></div>
+      <div class="focus">{{results[numberOfSet].hall.phoneNumber}}</div>
+      <div class="focus">{{results[numberOfSet].hall.website}}</div>
+    </div>
   </div>
-  <div>
-    <img src="{{results[numberOfSet].suiteStore.image}}">
-    <div>{{results[numberOfSet].suiteStore.name}}</div>
-    <div>{{results[numberOfSet].suiteStore.address}}</div>
-    <div>średnia cena: {{results[numberOfSet].suiteStore.avgPrice}}</div>
-    <div>Ocena: {{results[numberOfSet].suiteStore.rating}}</div>
-    <div>{{results[numberOfSet].suiteStore.phoneNumber}}</div>
-    <div>{{results[numberOfSet].suiteStore.website}}</div>
+  <div class="companyDetails">
+    <div class="image">
+      <img src="{{results[numberOfSet].dressStore.image}}" width="100" height="150" class="servicePhoto">
+    </div>
+    <div class="description">
+      <div class="name">{{results[numberOfSet].dressStore.name}}</div>
+      <div>{{results[numberOfSet].dressStore.address}}</div>
+      <div>Średnia cena: <span class="focus">{{results[numberOfSet].dressStore.avgPrice}} PLN</span></div>
+      <div>Ocena: <span class="focus">{{results[numberOfSet].dressStore.rating}}</span></div>
+      <div class="focus">{{results[numberOfSet].dressStore.phoneNumber}}</div>
+      <div class="focus">{{results[numberOfSet].dressStore.website}}</div>
+    </div>
   </div>
-  <div>
-    <img src="{{results[numberOfSet].musicBand.image}}">
-    <div>{{results[numberOfSet].musicBand.name}}</div>
-    <div>{{results[numberOfSet].musicBand.address}}</div>
-    <div>Cena za usługę: {{results[numberOfSet].musicBand.avgPrice}}</div>
-    <div>Ocena: {{results[numberOfSet].musicBand.rating}}</div>
-    <div>{{results[numberOfSet].musicBand.phoneNumber}}</div>
-    <div>{{results[numberOfSet].musicBand.website}}</div>
+  <div class="companyDetails">
+    <div class="image">
+      <img src="{{results[numberOfSet].suiteStore.image}}" width="100" height="150" class="servicePhoto">
+    </div>
+    <div class="description">
+      <div class="name">{{results[numberOfSet].suiteStore.name}}</div>
+      <div>{{results[numberOfSet].suiteStore.address}}</div>
+      <div>Średnia cena: <span class="focus">{{results[numberOfSet].suiteStore.avgPrice}} PLN</span></div>
+      <div>Ocena: <span class="focus">{{results[numberOfSet].suiteStore.rating}}</span></div>
+      <div class="focus">{{results[numberOfSet].suiteStore.phoneNumber}}</div>
+      <div class="focus">{{results[numberOfSet].suiteStore.website}}</div>
+    </div>
   </div>
-  <div>
-    <img src="{{results[numberOfSet].photographer.image}}">
-    <div>{{results[numberOfSet].photographer.name}}</div>
-    <div>{{results[numberOfSet].photographer.address}}</div>
-    <div>Cena za usługę: {{results[numberOfSet].photographer.avgPrice}}</div>
-    <div>Ocena: {{results[numberOfSet].photographer.rating}}</div>
-    <div>{{results[numberOfSet].photographer.phoneNumber}}</div>
-    <div>{{results[numberOfSet].photographer.website}}</div>
+  <div class="companyDetails">
+    <div class="image">
+      <img src="{{results[numberOfSet].musicBand.image}}" width="100" height="150" class="servicePhoto">
+    </div>
+    <div class="description">
+      <div class="name">{{results[numberOfSet].musicBand.name}}</div>
+      <div>{{results[numberOfSet].musicBand.address}}</div>
+      <div>Cena za usługę: <span class="focus">{{results[numberOfSet].musicBand.avgPrice}} PLN</span></div>
+      <div>Ocena: <span class="focus">{{results[numberOfSet].musicBand.rating}}</span></div>
+      <div class="focus">{{results[numberOfSet].musicBand.phoneNumber}}</div>
+      <div class="focus">{{results[numberOfSet].musicBand.website}}</div>
+    </div>
   </div>
-  <div>
-    <img src="{{results[numberOfSet].carRenting.image}}">
-    <div>{{results[numberOfSet].carRenting.name}}</div>
-    <div>{{results[numberOfSet].carRenting.address}}</div>
-    <div>Cena za wynajem: {{results[numberOfSet].carRenting.avgPrice}}</div>
-    <div>Ocena: {{results[numberOfSet].carRenting.rating}}</div>
-    <div>{{results[numberOfSet].carRenting.phoneNumber}}</div>
-    <div>{{results[numberOfSet].carRenting.website}}</div>
+  <div class="companyDetails">
+    <div class="image">
+      <img src="{{results[numberOfSet].photographer.image}}" width="100" height="150" class="servicePhoto">
+    </div>
+    <div class="description">
+      <div class="name">{{results[numberOfSet].photographer.name}}</div>
+      <div>{{results[numberOfSet].photographer.address}}</div>
+      <div>Cena za usługę: <span class="focus">{{results[numberOfSet].photographer.avgPrice}} PLN</span></div>
+      <div>Ocena: <span class="focus">{{results[numberOfSet].photographer.rating}}</span></div>
+      <div><span class="focus">{{results[numberOfSet].photographer.phoneNumber}}</span></div>
+      <div><span class="focus">{{results[numberOfSet].photographer.website}}</span></div>
+    </div>
   </div>
-  <div>
-    <img src="{{results[numberOfSet].floristicService.image}}">
-    <div>{{results[numberOfSet].floristicService.name}}</div>
-    <div>{{results[numberOfSet].floristicService.address}}</div>
-    <div>Cena za usługi: {{results[numberOfSet].floristicService.avgPrice}}</div>
-    <div>Ocena: {{results[numberOfSet].floristicService.rating}}</div>
-    <div>{{results[numberOfSet].floristicService.phoneNumber}}</div>
-    <div>{{results[numberOfSet].floristicService.website}}</div>
+  <div class="companyDetails">
+    <div class="image">
+      <img src="{{results[numberOfSet].carRenting.image}}" width="100" height="150" class="servicePhoto">
+    </div>
+    <div class="description">
+      <div class="name">{{results[numberOfSet].carRenting.name}}</div>
+      <div>{{results[numberOfSet].carRenting.address}}</div>
+      <div>Cena za wynajem: <span class="focus">{{results[numberOfSet].carRenting.avgPrice}} PLN</span></div>
+      <div>Ocena: <span class="focus">{{results[numberOfSet].carRenting.rating}}</span></div>
+      <div class="focus">{{results[numberOfSet].carRenting.phoneNumber}}</div>
+      <div class="focus">{{results[numberOfSet].carRenting.website}}</div>
+    </div>
   </div>
-  <div>
-    <img src="{{results[numberOfSet].hairDresser.image}}">
-    <div>{{results[numberOfSet].hairDresser.name}}</div>
-    <div>{{results[numberOfSet].hairDresser.address}}</div>
-    <div>średnia cena: {{results[numberOfSet].hairDresser.avgPrice}}</div>
-    <div>Ocena: {{results[numberOfSet].hairDresser.rating}}</div>
-    <div>{{results[numberOfSet].hairDresser.phoneNumber}}</div>
-    <div>{{results[numberOfSet].hairDresser.website}}</div>
+  <div class="companyDetails">
+    <div class="image">
+      <img src="{{results[numberOfSet].floristicService.image}}" width="100" height="150" class="servicePhoto">
+    </div>
+    <div class="description">
+      <div class="name">{{results[numberOfSet].floristicService.name}}</div>
+      <div>{{results[numberOfSet].floristicService.address}}</div>
+      <div>Cena za usługi: <span class="focus">{{results[numberOfSet].floristicService.avgPrice}} PLN</span></div>
+      <div>Ocena: <span class="focus">{{results[numberOfSet].floristicService.rating}}</span></div>
+      <div><span class="focus">{{results[numberOfSet].floristicService.phoneNumber}}</span></div>
+      <div><span class="focus">{{results[numberOfSet].floristicService.website}}</span></div>
+    </div>
   </div>
-  <div>
-    <img src="{{results[numberOfSet].makeUpSalon.image}}">
-    <div>{{results[numberOfSet].makeUpSalon.name}}</div>
-    <div>{{results[numberOfSet].makeUpSalon.address}}</div>
-    <div>średnia cena: {{results[numberOfSet].makeUpSalon.avgPrice}}</div>
-    <div>Ocena: {{results[numberOfSet].makeUpSalon.rating}}</div>
-    <div>{{results[numberOfSet].makeUpSalon.phoneNumber}}</div>
-    <div>{{results[numberOfSet].makeUpSalon.website}}</div>
+  <div class="companyDetails">
+    <div class="image">
+      <img src="{{results[numberOfSet].hairDresser.image}}" width="100" height="150" class="servicePhoto">
+    </div>
+    <div class="description">
+      <div class="name">{{results[numberOfSet].hairDresser.name}}</div>
+      <div>{{results[numberOfSet].hairDresser.address}}</div>
+      <div>Średnia cena: <span class="focus">{{results[numberOfSet].hairDresser.avgPrice}} PLN</span></div>
+      <div>Ocena: <span class="focus">{{results[numberOfSet].hairDresser.rating}}</span></div>
+      <div><span class="focus">{{results[numberOfSet].hairDresser.phoneNumber}}</span></div>
+      <div><span class="focus">{{results[numberOfSet].hairDresser.website}}</span></div>
+    </div>
   </div>
-  <div>
-    <img src="{{results[numberOfSet].beautySalon.image}}">
-    <div>{{results[numberOfSet].beautySalon.name}}</div>
-    <div>{{results[numberOfSet].beautySalon.address}}</div>
-    <div>średnia cena: {{results[numberOfSet].beautySalon.avgPrice}}</div>
-    <div>Ocena: {{results[numberOfSet].beautySalon.rating}}</div>
-    <div>{{results[numberOfSet].beautySalon.phoneNumber}}</div>
-    <div>{{results[numberOfSet].beautySalon.website}}</div>
+  <div class="companyDetails">
+    <div class="image">
+      <img src="{{results[numberOfSet].makeUpSalon.image}}" width="100" height="150" class="servicePhoto">
+    </div>
+    <div class="description">
+      <div class="name">{{results[numberOfSet].makeUpSalon.name}}</div>
+      <div>{{results[numberOfSet].makeUpSalon.address}}</div>
+      <div>Średnia cena: <span class="focus">{{results[numberOfSet].makeUpSalon.avgPrice}} PLN</span></div>
+      <div>Ocena: <span class="focus">{{results[numberOfSet].makeUpSalon.rating}}</span></div>
+      <div class="focus">{{results[numberOfSet].makeUpSalon.phoneNumber}}</div>
+      <div class="focus">{{results[numberOfSet].makeUpSalon.website}}</div>
+    </div>
   </div>
-  <button (click)="onPreviousSet()" *ngIf="numberOfSet > 0">Poprzedni zestaw</button>
-  <button (click)="onNextSet()" *ngIf="numberOfSet < results.length - 1">Następny zestaw</button>
+  <div class="companyDetails">
+    <div class="image">
+      <img src="{{results[numberOfSet].beautySalon.image}}" width="100" height="150" class="servicePhoto">
+    </div>
+    <div class="description">
+      <div class="name">{{results[numberOfSet].beautySalon.name}}</div>
+      <div>{{results[numberOfSet].beautySalon.address}}</div>
+      <div>Średnia cena: <span class="focus">{{results[numberOfSet].beautySalon.avgPrice}} PLN</span></div>
+      <div>Ocena: <span class="focus">{{results[numberOfSet].beautySalon.rating}}</span></div>
+      <div class="focus">{{results[numberOfSet].beautySalon.phoneNumber}}</div>
+      <div class="focus">{{results[numberOfSet].beautySalon.website}}</div>
+    </div>
+  </div>
+  <div class="buttonSection">
+  <button class="paginButton" (click)="onPreviousSet()" *ngIf="numberOfSet > 0">Poprzedni zestaw</button>
+  <button class="paginButton" (click)="onNextSet()" *ngIf="numberOfSet < results.length - 1">Następny zestaw</button>
+  </div>
 </div>

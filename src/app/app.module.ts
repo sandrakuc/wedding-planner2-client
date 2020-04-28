@@ -7,6 +7,7 @@ import { InputFormComponent } from './components/input-form/input-form.component
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ResultsListComponent } from './components/results-list/results-list.component';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 const appRoutes: Routes = [
   { path: '', component: InputFormComponent},
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     BrowserModule,
     FormsModule,
+    NgxSpinnerModule,
     ReactiveFormsModule
   ],
   providers: [HttpClientModule],

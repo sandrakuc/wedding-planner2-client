@@ -1,147 +1,237 @@
 <div class="inputDataForm">
+  <div class="customBanner">
+    <div class="logo" style="text-align: center">
+    <div class="productName">Your personal wedding consultant</div>
+    <div class="slogan">Professional advice at your fingertips</div>
+    </div>
+  </div>
+  <ngx-spinner
+    bdColor = "rgba(191,147,28,0.5)"
+    size = "medium"
+    color = "#fff"
+    type = "ball-elastic-dots"
+    width="100%">
+    <p style="color: white; font-family: Helvetica, sans-serif;" > Loading... </p>
+  </ngx-spinner>
   <form (ngSubmit)="onSave()" #inputForm="ngForm">
     <div class="form-group">
-      <label for="guestQuantity">Liczba gości</label><br />
-      <input type="text" id="guestQuantity" name="guestQuantity" class="form-control" [(ngModel)]="inputDataForm.guestQuantity" required/>
+      <label for="guestQuantity">Liczba gości</label><br/>
+      <input type="text" id="guestQuantity" name="guestQuantity" class="form-control"
+             [(ngModel)]="inputDataForm.guestQuantity" required/>
     </div>
     <div class="form-group">
-      <label for="budget">Budżet</label><br />
+      <label for="budget">Budżet</label><br/>
       <input type="text" id="budget" name="budget" class="form-control" [(ngModel)]="inputDataForm.budget" required/>
     </div>
     <div class="form-group">
-      <label for="budgetMargin">Dopuszczalny margines błędu dla budżetu</label><br />
-      <input type="text" id="budgetMargin" name="budgetMargin" class="form-control" [(ngModel)]="inputDataForm.budgetMargin" required/>
+      <label for="budgetMargin">Dopuszczalny margines błędu dla budżetu</label><br/>
+      <input type="text" id="budgetMargin" name="budgetMargin" class="form-control"
+             [(ngModel)]="inputDataForm.budgetMargin" required/>
     </div>
     <div class="form-group">
-      <label for="weddingVenueProvince">Województwo miejsca ślubu</label><br />
-      <select id="weddingVenueProvince" name="weddingVenueProvince" class="form-control" [(ngModel)]="inputDataForm.weddingVenueProvince" #province (change)="onChangeWeddingVenueProvince(province.value)" required>
-        <option  *ngFor="let province of weddingVenueProvinces" [value]="province.name">{{province.name}}</option>
+      <label for="weddingVenueProvince">Województwo miejsca ślubu</label><br/>
+      <select id="weddingVenueProvince" name="weddingVenueProvince" class="form-control"
+              [(ngModel)]="inputDataForm.weddingVenueProvince" #province
+              (change)="onChangeWeddingVenueProvince(province.value)" required>
+        <option *ngFor="let province of weddingVenueProvinces" [value]="province.name">{{province.name}}</option>
       </select>
     </div>
     <div class="form-group">
-      <label for="weddingVenueCity">Miasto miejsca ślubu</label><br />
-      <select id="weddingVenueCity" name="weddingVenueCity" class="form-control" [(ngModel)]="inputDataForm.weddingVenueCity" #city (change)="onChangeWeddingVenueCity(city.value)" required>
-        <option  *ngFor="let city of weddingVenueCities" [value]="city.name">{{city.name}}</option>
+      <label for="weddingVenueCity">Miasto miejsca ślubu</label><br/>
+      <select id="weddingVenueCity" name="weddingVenueCity" class="form-control"
+              [(ngModel)]="inputDataForm.weddingVenueCity" #city (change)="onChangeWeddingVenueCity(city.value)"
+              required>
+        <option *ngFor="let city of weddingVenueCities" [value]="city.name">{{city.name}}</option>
       </select>
     </div>
     <div class="form-group">
-      <label for="weddingVenue">Miejsce ślubu</label><br />
+      <label for="weddingVenue">Miejsce ślubu</label><br/>
       <select id="weddingVenue" name="weddingVenue" class="form-control" [(ngModel)]="chosenWeddingVenue" required>
-        <option  *ngFor="let venue of weddingVenues" [ngValue]="venue">{{venue.name}}</option>
+        <option *ngFor="let venue of weddingVenues" [ngValue]="venue">{{venue.name}}</option>
       </select>
     </div>
     <div class="form-group">
-      <label for="brideLivingProvince">Województwo zamieszkania Panny Młodej</label><br />
-      <select id="brideLivingProvince" name="brideLivingProvince" class="form-control" [(ngModel)]="inputDataForm.brideLivingProvince" #provinceBride (change)="onChangeBrideLivingProvince(provinceBride.value)" required>
-        <option  *ngFor="let province of brideLivingProvinces" [value]="province.name">{{province.name}}</option>
+      <label for="brideLivingProvince">Województwo zamieszkania Panny Młodej</label><br/>
+      <select id="brideLivingProvince" name="brideLivingProvince" class="form-control"
+              [(ngModel)]="inputDataForm.brideLivingProvince" #provinceBride
+              (change)="onChangeBrideLivingProvince(provinceBride.value)" required>
+        <option *ngFor="let province of brideLivingProvinces" [value]="province.name">{{province.name}}</option>
       </select>
     </div>
     <div class="form-group">
-      <label for="brideLivingCity">Miasto zamieszkania Panny Młodej</label><br />
-      <select id="brideLivingCity" name="brideLivingCity" class="form-control" [(ngModel)]="inputDataForm.brideLivingCity" required>
-        <option  *ngFor="let city of brideLivingCities" [value]="city.name">{{city.name}}</option>
+      <label for="brideLivingCity">Miasto zamieszkania Panny Młodej</label><br/>
+      <select id="brideLivingCity" name="brideLivingCity" class="form-control"
+              [(ngModel)]="inputDataForm.brideLivingCity" required>
+        <option *ngFor="let city of brideLivingCities" [value]="city.name">{{city.name}}</option>
       </select>
     </div>
     <div class="form-group">
-      <label for="groomLivingProvince">Województwo zamieszkania Pana Młodego</label><br />
-      <select id="groomLivingProvince" name="groomLivingProvince" class="form-control" [(ngModel)]="inputDataForm.groomLivingProvince" #provinceGroom (change)="onChangeGroomLivingProvince(provinceGroom.value)" required>
-        <option  *ngFor="let province of groomLivingProvinces" [value]="province.name">{{province.name}}</option>
+      <label for="groomLivingProvince">Województwo zamieszkania Pana Młodego</label><br/>
+      <select id="groomLivingProvince" name="groomLivingProvince" class="form-control"
+              [(ngModel)]="inputDataForm.groomLivingProvince" #provinceGroom
+              (change)="onChangeGroomLivingProvince(provinceGroom.value)" required>
+        <option *ngFor="let province of groomLivingProvinces" [value]="province.name">{{province.name}}</option>
       </select>
     </div>
     <div class="form-group">
-      <label for="groomLivingCity">Miasto zamieszkania Pana Młodego</label><br />
-      <select id="groomLivingCity" name="groomLivingCity" class="form-control" [(ngModel)]="inputDataForm.groomLivingCity" required>
-        <option  *ngFor="let city of groomLivingCities" [value]="city.name">{{city.name}}</option>
+      <label for="groomLivingCity">Miasto zamieszkania Pana Młodego</label><br/>
+      <select id="groomLivingCity" name="groomLivingCity" class="form-control"
+              [(ngModel)]="inputDataForm.groomLivingCity" required>
+        <option *ngFor="let city of groomLivingCities" [value]="city.name">{{city.name}}</option>
       </select>
     </div>
     <div class="form-group">
-      <p>Ocena priorytetu dla sali weselnej</p>
-      <label for="weddingHallDistancePriority">Położenie blisko miejsca ślubu</label><br />
-      <input type="number" id="weddingHallDistancePriority" name="weddingHallDistancePriority" class="form-control" [(ngModel)]="weddingHallCriteria.distanceCriteria" required #hallDistance/>
-      <label for="weddingHallQualityPriority">Wysoka jakość</label><br />
-      <input type="number" id="weddingHallQualityPriority" name="weddingHallQualityPriority" class="form-control" [(ngModel)]="weddingHallCriteria.noteCriteria" required #hallNote/>
-      <label for="weddingHallPricePriority">Niska cena</label><br />
-      <input type="number" id="weddingHallPricePriority" name="weddingHallPricePriority" class="form-control" [(ngModel)]="weddingHallCriteria.priceCriteria" required #hallPrice/>
+      <p><b>Ocena stopnia priorytetów</b></p>
     </div>
-    <div class="form-group">
-      <p *ngIf="(hallDistance.value && (hallDistance.value < 1 || hallDistance.value > 10)) || (hallNote.value && (hallNote.value < 1 || hallNote.value > 10)) || (hallPrice.value && (hallPrice.value < 1 || hallPrice.value > 10))">
+    <div class="bigTileHalls">
+      <p class="mainTextPriority" style="padding-bottom: 0px">Hale weselne</p>
+      <div class="smallTileContainerHalls">
+        <div class="smallTile" style="float: left">
+          <label for="weddingHallDistancePriority">Odległość</label><br/>
+          <input type="number" id="weddingHallDistancePriority" name="weddingHallDistancePriority" class="form-control"
+                 [(ngModel)]="weddingHallCriteria.distanceCriteria" required #hallDistance/>
+        </div>
+        <div class="smallTile" style="float: left">
+          <label for="weddingHallQualityPriority">Jakość</label><br/>
+          <input type="number" id="weddingHallQualityPriority" name="weddingHallQualityPriority" class="form-control"
+                 [(ngModel)]="weddingHallCriteria.noteCriteria" required #hallNote/>
+        </div>
+        <div class="smallTile" style="float: left">
+          <label for="weddingHallPricePriority">Cena</label><br/>
+          <input type="number" id="weddingHallPricePriority" name="weddingHallPricePriority" class="form-control"
+                 [(ngModel)]="weddingHallCriteria.priceCriteria" required #hallPrice/>
+        </div>
+      </div>
+      <p class="infoMessage"
+         *ngIf="(hallDistance.value && (hallDistance.value < 1 || hallDistance.value > 10)) || (hallNote.value && (hallNote.value < 1 || hallNote.value > 10)) || (hallPrice.value && (hallPrice.value < 1 || hallPrice.value > 10))">
         Wartość musi mieścić się w przedziale 1-10
       </p>
     </div>
-    <div class="form-group">
-      <p>Ocena priorytetu dla ślubnych strojów</p>
-      <label for="weddingOutfitQualityPriority">Wysoka jakość</label><br />
-      <input type="number" id="weddingOutfitQualityPriority" name="weddingOutfitQualityPriority" class="form-control" [(ngModel)]="weddingOutfitCriteria.noteCriteria" required #outfitNote/>
-      <label for="weddingOutfitPricePriority">Niska cena</label><br />
-      <input type="number" id="weddingOutfitPricePriority" name="weddingOutfitPricePriority" class="form-control" [(ngModel)]="weddingOutfitCriteria.priceCriteria" required #outfitPrice/>
+    <div class="twoTileContainer">
+      <div class="bigTile">
+        <p class="mainTextPriority">Stroje weselne</p>
+        <div class="smallTileContainer">
+          <div class="smallTile">
+            <label for="weddingOutfitQualityPriority">Jakość</label><br/>
+            <input type="number" id="weddingOutfitQualityPriority" name="weddingOutfitQualityPriority"
+                   class="form-control" [(ngModel)]="weddingOutfitCriteria.noteCriteria" required #outfitNote/>
+          </div>
+          <div class="smallTile">
+            <label for="weddingOutfitPricePriority">Cena</label><br/>
+            <input type="number" id="weddingOutfitPricePriority" name="weddingOutfitPricePriority" class="form-control"
+                   [(ngModel)]="weddingOutfitCriteria.priceCriteria" required #outfitPrice/>
+          </div>
+        </div>
+        <p class="infoMessage"
+           *ngIf="(outfitNote.value && (outfitNote.value < 1 || outfitNote.value > 10)) || (outfitPrice.value && (outfitPrice.value < 1 || outfitPrice.value > 10))">
+          Wartość musi mieścić się w przedziale 1-10
+        </p>
+      </div>
+      <div class="bigTile">
+        <p class="mainTextPriority">Salony urody</p>
+        <div class="smallTileContainer">
+          <div class="smallTile">
+            <label for="beautyServiceQualityPriority">Jakość</label><br/>
+            <input type="number" id="beautyServiceQualityPriority" name="beautyServiceQualityPriority"
+                   class="form-control" [(ngModel)]="beautyServiceCriteria.noteCriteria" required #beautyNote/>
+          </div>
+          <div class="smallTile">
+            <label for="beautyServicePricePriority">Cena</label><br/>
+            <input type="number" id="beautyServicePricePriority" name="beautyServicePricePriority" class="form-control"
+                   [(ngModel)]="beautyServiceCriteria.priceCriteria" required #beautyPrice/>
+          </div>
+        </div>
+        <p class="infoMessage"
+           *ngIf="(beautyNote.value && (beautyNote.value < 1 || beautyNote.value > 10)) || (beautyPrice.value && (beautyPrice.value < 1 || beautyPrice.value > 10))">
+          Wartość musi mieścić się w przedziale 1-10
+        </p>
+      </div>
+    </div>
+    <div class="twoTileContainer">
+      <div class="bigTile">
+        <p class="mainTextPriority">Kwiaciarnie</p>
+        <div class="smallTileContainer">
+          <div class="smallTile">
+            <label for="floristicServiceQualityPriority">Jakość</label><br/>
+            <input type="number" id="floristicServiceQualityPriority" name="floristicServiceQualityPriority"
+                   class="form-control" [(ngModel)]="floristicServicesCriteria.noteCriteria" required #floristicNote/>
+          </div>
+          <div class="smallTile">
+            <label for="floristicServicePricePriority">Cena</label><br/>
+            <input type="number" id="floristicServicePricePriority" name="floristicServicePricePriority"
+                   class="form-control" [(ngModel)]="floristicServicesCriteria.priceCriteria" required #floristicPrice/>
+          </div>
+        </div>
+        <p class="infoMessage"
+           *ngIf="(floristicNote.value && (floristicNote.value < 1 || floristicNote.value > 10)) || (floristicPrice.value && (floristicPrice.value < 1 || floristicPrice.value > 10))">
+          Wartość musi mieścić się w przedziale 1-10
+        </p>
+      </div>
+      <div class="bigTile">
+        <p class="mainTextPriority">Fotograf</p>
+        <div class="smallTileContainer">
+          <div class="smallTile">
+            <label for="photographerQualityPriority">Jakość</label><br/>
+            <input type="number" id="photographerQualityPriority" name="photographerQualityPriority"
+                   class="form-control" [(ngModel)]="photographerCriteria.noteCriteria" required #photographNote/>
+          </div>
+          <div class="smallTile">
+            <label for="photographerPricePriority">Cena</label><br/>
+            <input type="number" id="photographerPricePriority" name="photographerPricePriority" class="form-control"
+                   [(ngModel)]="photographerCriteria.priceCriteria" required #photographPrice/>
+          </div>
+        </div>
+        <p class="infoMessage"
+           *ngIf="(photographNote.value && (photographNote.value < 1 || photographNote.value > 10)) || (photographPrice.value && (photographPrice.value < 1 || photographPrice.value > 10))">
+          Wartość musi mieścić się w przedziale 1-10
+        </p>
+      </div>
+    </div>
+    <div class="twoTileContainer">
+      <div class="bigTile">
+        <p class="mainTextPriority">Zespół muzyczny</p>
+        <div class="smallTileContainer">
+          <div class="smallTile">
+            <label for="musicBandQualityPriority">Jakość</label><br/>
+            <input type="number" id="musicBandQualityPriority" name="musicBandQualityPriority" class="form-control"
+                   [(ngModel)]="musicBandCriteria.noteCriteria" required #musicNote/>
+          </div>
+          <div class="smallTile">
+            <label for="musicBandPricePriority">Cena</label><br/>
+            <input type="number" id="musicBandPricePriority" name="musicBandPricePriority" class="form-control"
+                   [(ngModel)]="musicBandCriteria.priceCriteria" required #musicPrice/>
+          </div>
+        </div>
+        <p class="infoMessage"
+           *ngIf="(musicNote.value && (musicNote.value < 1 || musicNote.value > 10)) || (musicPrice.value && (musicPrice.value < 1 || musicPrice.value > 10))">
+          Wartość musi mieścić się w przedziale 1-10
+        </p>
+      </div>
+      <div class="bigTile">
+        <p class="mainTextPriority">Samochód</p>
+        <div class="smallTileContainer">
+          <div class="smallTile">
+            <label for="carRentingQualityPriority">Jakość</label><br/>
+            <input type="number" id="carRentingQualityPriority" name="carRentingQualityPriority" class="form-control"
+                   [(ngModel)]="carRentingServicesCriteria.noteCriteria" required #carNote/>
+          </div>
+          <div class="smallTile">
+            <label for="carRentingPricePriority">Cena</label><br/>
+            <input type="number" id="carRentingPricePriority" name="carRentingPricePriority" class="form-control"
+                   [(ngModel)]="carRentingServicesCriteria.priceCriteria" required #carPrice/>
+          </div>
+        </div>
+        <p class="infoMessage"
+           *ngIf="(carNote.value && (carNote.value < 1 || carNote.value > 10)) || (carPrice.value && (carPrice.value < 1 || carPrice.value > 10))">
+          Wartość musi mieścić się w przedziale 1-10
+        </p>
+      </div>
     </div>
     <div class="form-group">
-      <p *ngIf="(outfitNote.value && (outfitNote.value < 1 || outfitNote.value > 10)) || (outfitPrice.value && (outfitPrice.value < 1 || outfitPrice.value > 10))">
-        Wartość musi mieścić się w przedziale 1-10
-      </p>
-    </div>
-    <div class="form-group">
-      <p>Ocena priorytetu dla salonów urody</p>
-      <label for="beautyServiceQualityPriority">Wysoka jakość</label><br />
-      <input type="number" id="beautyServiceQualityPriority" name="beautyServiceQualityPriority" class="form-control" [(ngModel)]="beautyServiceCriteria.noteCriteria" required #beautyNote/>
-      <label for="beautyServicePricePriority">Niska cena</label><br />
-      <input type="number" id="beautyServicePricePriority" name="beautyServicePricePriority" class="form-control" [(ngModel)]="beautyServiceCriteria.priceCriteria" required #beautyPrice/>
-    </div>
-    <div class="form-group">
-      <p *ngIf="(beautyNote.value && (beautyNote.value < 1 || beautyNote.value > 10)) || (beautyPrice.value && (beautyPrice.value < 1 || beautyPrice.value > 10))">
-        Wartość musi mieścić się w przedziale 1-10
-      </p>
-    </div>
-    <div class="form-group">
-      <p>Ocena priorytetu dla kwiaciarni</p>
-      <label for="floristicServiceQualityPriority">Wysoka jakość</label><br />
-      <input type="number" id="floristicServiceQualityPriority" name="floristicServiceQualityPriority" class="form-control" [(ngModel)]="floristicServicesCriteria.noteCriteria" required #floristicNote/>
-      <label for="floristicServicePricePriority">Niska cena</label><br />
-      <input type="number" id="floristicServicePricePriority" name="floristicServicePricePriority" class="form-control" [(ngModel)]="floristicServicesCriteria.priceCriteria" required #floristicPrice/>
-    </div>
-    <div class="form-group">
-      <p *ngIf="(floristicNote.value && (floristicNote.value < 1 || floristicNote.value > 10)) || (floristicPrice.value && (floristicPrice.value < 1 || floristicPrice.value > 10))">
-        Wartość musi mieścić się w przedziale 1-10
-      </p>
-    </div>
-    <div class="form-group">
-      <p>Ocena priorytetu dla usług fotograficznych i filmowych</p>
-      <label for="photographerQualityPriority">Wysoka jakość</label><br />
-      <input type="number" id="photographerQualityPriority" name="photographerQualityPriority" class="form-control" [(ngModel)]="photographerCriteria.noteCriteria" required #photographNote/>
-      <label for="photographerPricePriority">Niska cena</label><br />
-      <input type="number" id="photographerPricePriority" name="photographerPricePriority" class="form-control" [(ngModel)]="photographerCriteria.priceCriteria" required #photographPrice/>
-    </div>
-    <div class="form-group">
-      <p *ngIf="(photographNote.value && (photographNote.value < 1 || photographNote.value > 10)) || (photographPrice.value && (photographPrice.value < 1 || photographPrice.value > 10))">
-        Wartość musi mieścić się w przedziale 1-10
-      </p>
-    </div>
-    <div class="form-group">
-      <p>Ocena priorytetu dla zespołu muzycznego</p>
-      <label for="musicBandQualityPriority">Wysoka jakość</label><br />
-      <input type="number" id="musicBandQualityPriority" name="musicBandQualityPriority" class="form-control" [(ngModel)]="musicBandCriteria.noteCriteria" required #musicNote/>
-      <label for="musicBandPricePriority">Niska cena</label><br />
-      <input type="number" id="musicBandPricePriority" name="musicBandPricePriority" class="form-control" [(ngModel)]="musicBandCriteria.priceCriteria" required #musicPrice/>
-    </div>
-    <div class="form-group">
-      <p *ngIf="(musicNote.value && (musicNote.value < 1 || musicNote.value > 10)) || (musicPrice.value && (musicPrice.value < 1 || musicPrice.value > 10))">
-        Wartość musi mieścić się w przedziale 1-10
-      </p>
-    </div>
-    <div class="form-group">
-      <p>Ocena priorytetu dla wynajmu samochodu</p>
-      <label for="carRentingQualityPriority">Wysoka jakość</label><br />
-      <input type="number" id="carRentingQualityPriority" name="carRentingQualityPriority" class="form-control" [(ngModel)]="carRentingServicesCriteria.noteCriteria" required #carNote/>
-      <label for="carRentingPricePriority">Niska cena</label><br />
-      <input type="number" id="carRentingPricePriority" name="carRentingPricePriority" class="form-control" [(ngModel)]="carRentingServicesCriteria.priceCriteria" required #carPrice/>
-    </div>
-    <div class="form-group">
-      <p *ngIf="(carNote.value && (carNote.value < 1 || carNote.value > 10)) || (carPrice.value && (carPrice.value < 1 || carPrice.value > 10))">
-        Wartość musi mieścić się w przedziale 1-10
-      </p>
-    </div>
-    <div class="form-group">
-      <button type="submit" [disabled]="inputForm.invalid || (hallDistance.value < 1 || hallDistance.value > 10) || (hallNote.value < 1 || hallNote.value > 10) || (hallPrice.value < 1 || hallPrice.value > 10) || (outfitNote.value < 1 || outfitNote.value > 10) || (outfitPrice.value < 1 || outfitPrice.value > 10) || (beautyNote.value < 1 || beautyNote.value > 10) || (beautyPrice.value < 1 || beautyPrice.value > 10) || (musicNote.value < 1 || musicNote.value > 10) || (musicPrice.value < 1 || musicPrice.value > 10) || (floristicNote.value < 1 || floristicNote.value > 10) || (floristicPrice.value < 1 || floristicPrice.value > 10) || (photographNote.value < 1 || photographNote.value > 10) || (photographPrice.value < 1 || photographPrice.value > 10) || (carNote.value < 1 || carNote.value > 10) || (carPrice.value < 1 || carPrice.value > 10)" class="btn btn-primary">Wyślij</button>
+      <button type="submit"
+              [disabled]="inputForm.invalid || (hallDistance.value < 1 || hallDistance.value > 10) || (hallNote.value < 1 || hallNote.value > 10) || (hallPrice.value < 1 || hallPrice.value > 10) || (outfitNote.value < 1 || outfitNote.value > 10) || (outfitPrice.value < 1 || outfitPrice.value > 10) || (beautyNote.value < 1 || beautyNote.value > 10) || (beautyPrice.value < 1 || beautyPrice.value > 10) || (musicNote.value < 1 || musicNote.value > 10) || (musicPrice.value < 1 || musicPrice.value > 10) || (floristicNote.value < 1 || floristicNote.value > 10) || (floristicPrice.value < 1 || floristicPrice.value > 10) || (photographNote.value < 1 || photographNote.value > 10) || (photographPrice.value < 1 || photographPrice.value > 10) || (carNote.value < 1 || carNote.value > 10) || (carPrice.value < 1 || carPrice.value > 10)"
+              class="btn btn-primary">Wyślij
+      </button>
     </div>
   </form>
 </div>
